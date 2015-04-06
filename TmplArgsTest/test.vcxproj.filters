@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{e7a02e39-8715-403d-b8c0-0be8cccef6c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TmplArgs">
+      <UniqueIdentifier>{2b231a66-3761-4afc-b865-4bf08ee75c20}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Debug.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugBase.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TmplArgs\TmplArgDef.h">
+      <Filter>TmplArgs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TmplArgs\TmplArgList.h">
+      <Filter>TmplArgs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TmplArgs\TmplArgUtil.h">
+      <Filter>TmplArgs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+</Project>
