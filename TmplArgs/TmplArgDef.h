@@ -22,26 +22,30 @@
 
 
 /*
- * Sim_TmplArgList	 --> class _T0 , class _T1 ... class _T9
- * Sim_TmplList		 --> class _ResultType , class _T0 ... class _T9
- * Sim_TmplArgT		 --> _T9 arg9
- * Sim_TmplArgTList	 --> _T0 arg0 , _T1 arg1 ... _T9 arg9
- * Sim_TmplArgOT	 --> _T9
- * Sim_TmplArgOTList --> _T0 , _T1 ... _T9
- * Sim_TmplArgOV	 --> arg9
- * Sim_TmplArgOVList --> arg0 , arg1 ... arg9
- * Sim_TmplFuncPtr	 --> _ResultType(_T0, _T1 ... _T9)
+ * template_cTcT(x)			--> class _T0 , class _T1 ... class _T9
+ * template_cRcTcT(x)		--> class _ResultType , class _T0 ... class _T9
+ * template_T(x)			--> _T9
+ * template_TT(x)			--> _T0 , _T1 ... _T9
+ * template_RTT(x)			--> _ResultType, _T0 , _T1 ... _T9
+ * template_a(x)			--> arg9
+ * template_Ta(x)			--> _T9 arg9
+ * template_aa(x)			--> arg0 , arg1 ... arg9
+ * template_TaTa(x)			--> _T0 arg0 , _T1 arg1 ... _T9 arg9
+ * template_Func(x)			--> _TResult(_T0, _T1 ... _T9)
+ * template_FuncPtr(x)		--> _TResult(*_ptr)(_T0, _T1 ... _T9)
 */
 
-#define Sim_TmplArgList		_YNAME_(TmplArgList, _ArgNum_)
-#define Sim_TmplList		_YNAME_(TmplList, _ArgNum_)
-#define Sim_TmplArgT		_YNAME_(TmplArgT, _ArgNum_)
-#define Sim_TmplArgTList	_YNAME_(TmplArgTList, _ArgNum_)
-#define Sim_TmplArgOT		_YNAME_(TmplArgOT, _ArgNum_)
-#define Sim_TmplArgOTList	_YNAME_(TmplArgOTList, _ArgNum_)
-#define Sim_TmplArgOV		_YNAME_(TmplArgOV, _ArgNum_)
-#define Sim_TmplArgOVList	_YNAME_(TmplArgOVList, _ArgNum_)
-#define Sim_TmplFuncPtr		_YNAME_(TmplFuncPtr, _ArgNum_)
+#define templateX_cTcT		_YNAME_(template_cTcT, _ArgNum_)
+#define templateX_cRcTcT	_YNAME_(template_cRcTcT, _ArgNum_)
+#define templateX_T			_YNAME_(template_T, _ArgNum_)
+#define templateX_TT		_YNAME_(template_TT, _ArgNum_)
+#define templateX_RTT		_YNAME_(template_RTT, _ArgNum_)
+#define templateX_a			_YNAME_(template_a, _ArgNum_)
+#define templateX_Ta		_YNAME_(template_Ta, _ArgNum_)
+#define templateX_aa		_YNAME_(template_aa, _ArgNum_)
+#define templateX_TaTa		_YNAME_(template_TaTa, _ArgNum_)
+#define templateX_Func		_YNAME_(template_Func, _ArgNum_)
+#define templateX_FuncPtr	_YNAME_(template_FuncPtr, _ArgNum_)
 
 
 /*
@@ -52,12 +56,14 @@
 
 
 #undef COMMA
-#undef Sim_TmplArgList
-#undef Sim_TmplList
-#undef Sim_TmplArgT
-#undef Sim_TmplArgTList
-#undef Sim_TmplArgOT
-#undef Sim_TmplArgOTList
-#undef Sim_TmplArgOV
-#undef Sim_TmplArgOVList
-#undef Sim_TmplFuncPtr
+#undef templateX_cTcT
+#undef templateX_cRcTcT
+#undef templateX_T
+#undef templateX_TT
+#undef templateX_RTT
+#undef templateX_a
+#undef templateX_Ta
+#undef templateX_aa
+#undef templateX_TaTa
+#undef templateX_Func
+#undef templateX_FuncPtr

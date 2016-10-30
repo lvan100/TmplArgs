@@ -5,347 +5,413 @@
  */
 
 
-#if _ArgNum_Max_ != 10
+#if _ArgNum_Max_ > 10
 #	error bad number of arguments
 #endif
 
 
-//////////////////////////////////////////////////////////////////////////
-// 0
+ //////////////////////////////////////////////////////////////////////////
+ // 0
 
-// 模板参数（右侧）列表 
-#define TmplArgList0	
+ // ==> 
+#define template_cTcT0
 
-// 模板参数（完整）列表 class _ResultType
-#define TmplList0		TmplResultType
+ // ==> class _TResult
+#define template_cRcTcT0	template_cR
 
-// 函数参数				
-#define TmplArgT0		
+ // ==> 
+#define template_T0			
 
-// 函数参数列表			
-#define TmplArgTList0	TmplArgT0
+ // ==> 
+#define template_TT0		
 
-// 模板参数变量			
-#define TmplArgOT0		
+ // ==> _TResult
+#define template_RTT0		template_R
 
-// 模板参数变量列表		
-#define TmplArgOTList0	TmplArgOT0
+ // ==> 
+#define template_a0			
 
-// 函数参数变量			
-#define TmplArgOV0		
+ // ==> 
+#define template_Ta0		template_T0 template_a0
 
-// 函数参数变量列表		
-#define TmplArgOVList0	TmplArgOV0
+ // ==> 
+#define template_aa0		
 
-// 函数指针				_ResultType()
-#define TmplFuncPtr0	TmplResult(TmplArgOVList0)
+ // ==> 
+#define template_TaTa0		
+
+ // ==> _TResult()
+#define template_Func0		template_R(template_TT0)
+
+ // ==> _TResult(*_ptr)()
+#define template_FuncPtr0	typedef template_R(*_ptr)(template_TT0);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 1
 
-// 模板参数（右侧）列表 class _T0
-#define TmplArgList1	TmplArgType(0)
+// ==> class _T0
+#define template_cTcT1		template_cT(0)
 
-// 模板参数（完整）列表 class _ResultType , class _T0
-#define TmplList1		TmplResultType , TmplArgList1
+// ==> class _TResult , class _T0
+#define template_cRcTcT1	template_cR , template_cTcT1
 
-// 函数参数				_T0 arg0
-#define TmplArgT1		TmplArg(0) TmplArgV(0)
+// ==> _T0
+#define template_T1			template_T(0)
 
-// 函数参数列表			_T0 arg0
-#define TmplArgTList1	TmplArgT1
+// ==> _T0
+#define template_TT1		template_T1
 
-// 模板参数变量			_T0
-#define TmplArgOT1		TmplArg(0)
+// ==> _TResult, _T0
+#define template_RTT1		template_R , template_TT1
 
-// 模板参数变量列表		_T0
-#define TmplArgOTList1	TmplArgOT1
+// ==> arg0
+#define template_a1			template_a(0)
 
-// 函数参数变量			arg0
-#define TmplArgOV1		TmplArgV(0)
+// ==> _T0 arg0
+#define template_Ta1		template_T1 template_a1
 
-// 函数参数变量列表		arg0
-#define TmplArgOVList1	TmplArgOV1
+// ==> arg0
+#define template_aa1		template_a1
 
-// 函数指针				_ResultType(_T0)
-#define TmplFuncPtr1	TmplResult(TmplArgOTList1)
+// ==> _T0 arg0
+#define template_TaTa1		template_Ta1
+
+// ==> _TResult(_T0)
+#define template_Func1		template_R(template_TT1)
+
+// ==> _TResult(*Ptr)(_T0)
+#define template_FuncPtr1	typedef template_R(*_ptr)(template_TT1);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 2
 
-// 模板参数（右侧）列表 class _T0 , class _T1
-#define TmplArgList2	TmplArgList1 , TmplArgType(1)
+// ==> class _T0 , class _T1
+#define template_cTcT2		template_cTcT1 , template_cT(1)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1
-#define TmplList2		TmplResultType , TmplArgList2
+// ==> class _TResult , class _T0 , class _T1
+#define template_cRcTcT2	template_cR , template_cTcT2
 
-// 函数参数				_T1 arg1
-#define TmplArgT2		TmplArg(1) TmplArgV(1)
+// ==> _T1
+#define template_T2			template_T(1)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1
-#define TmplArgTList2	TmplArgTList1 , TmplArgT2
+// ==> _T0 , _T1
+#define template_TT2		template_TT1 , template_T2
 
-// 模板参数变量			_T1
-#define TmplArgOT2		TmplArg(1)
+// ==> _TResult, _T0 , _T1
+#define template_RTT2		template_R , template_TT2
 
-// 模板参数变量列表		_T0 , _T1
-#define TmplArgOTList2	TmplArgOTList1 , TmplArgOT2
+// ==> arg1
+#define template_a2			template_a(1)
 
-// 函数参数变量			arg1
-#define TmplArgOV2		TmplArgV(1)
+// ==> _T1 arg1
+#define template_Ta2		template_T2 template_a2
 
-// 函数参数变量列表		arg0 , arg1
-#define TmplArgOVList2	TmplArgOVList1 , TmplArgOV2
+// ==> arg0 , arg1
+#define template_aa2		template_aa1 , template_a2
 
-// 函数指针				_ResultType(_T0, _T1)
-#define TmplFuncPtr2	TmplResult(TmplArgOTList2)
+// ==> _T0 arg0 , _T1 arg1
+#define template_TaTa2		template_TaTa1 , template_Ta2
+
+// ==> _TResult(_T0, _T1)
+#define template_Func2		template_R(template_TT2)
+
+// ==> _TResult(*Ptr)(_T0, _T1)
+#define template_FuncPtr2	typedef template_R(*_ptr)(template_TT2);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 3
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2
-#define TmplArgList3	TmplArgList2 , TmplArgType(2)
+// ==> class _T0 , class _T1 , class _T2
+#define template_cTcT3		template_cTcT2 , template_cT(2)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2
-#define TmplList3		TmplResultType , TmplArgList3
+// ==> class _TResult , class _T0 , class _T1 , class _T2
+#define template_cRcTcT3	template_cR , template_cTcT3
 
-// 函数参数				_T2 arg2
-#define TmplArgT3		TmplArg(2) TmplArgV(2)
+// ==> _T2
+#define template_T3			template_T(2)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2
-#define TmplArgTList3	TmplArgTList2 , TmplArgT3
+// ==> _T0 , _T1 , _T2
+#define template_TT3		template_TT2 , template_T3
 
-// 模板参数变量			_T2
-#define TmplArgOT3		TmplArg(2)
+// ==> _TResult, _T0 , _T1 , _T2
+#define template_RTT3		template_R , template_TT3
 
-// 模板参数变量列表		_T0 , _T1 , _T2
-#define TmplArgOTList3	TmplArgOTList2 , TmplArgOT3
+// ==> arg2
+#define template_a3			template_a(2)
 
-// 函数参数变量			arg2
-#define TmplArgOV3		TmplArgV(2)
+// ==> _T2 arg2
+#define template_Ta3		template_T3 template_a3
 
-// 函数参数变量列表		arg0 , arg1 , arg2
-#define TmplArgOVList3	TmplArgOVList2 , TmplArgOV3
+// ==> arg0 , arg1 , arg2
+#define template_aa3		template_aa2 , template_a3
 
-// 函数指针				_ResultType(_T0, _T1, _T2)
-#define TmplFuncPtr3	TmplResult(TmplArgOTList3)
+// ==> _T0 arg0 , _T1 arg1 , _T2 arg2
+#define template_TaTa3		template_TaTa2 , template_Ta3
+
+// ==> _TResult(_T0, _T1, _T2)
+#define template_Func3		template_R(template_TT3)
+
+// ==> _TResult(*Ptr)(_T0, _T1, _T2)
+#define template_FuncPtr3	typedef template_R(*_ptr)(template_TT3);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 4
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2 , class _T3
-#define TmplArgList4	TmplArgList3 , TmplArgType(3)
+// ==> class _T0 , class _T1 , class _T2 , class _T3
+#define template_cTcT4		template_cTcT3 , template_cT(3)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2 , class _T3
-#define TmplList4		TmplResultType , TmplArgList4
+// ==> class _TResult , class _T0 , ... , class _T3
+#define template_cRcTcT4	template_cR , template_cTcT4
 
-// 函数参数				_T3 arg3
-#define TmplArgT4		TmplArg(3) TmplArgV(3)
+// ==> _T3
+#define template_T4			template_T(3)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2 , _T3 arg3
-#define TmplArgTList4	TmplArgTList3 , TmplArgT4
+// ==> _T0 , _T1 , _T2 , _T3
+#define template_TT4		template_TT3 , template_T4
 
-// 模板参数变量			_T3
-#define TmplArgOT4		TmplArg(3)
+// ==> _TResult, _T0 , ... , _T3
+#define template_RTT4		template_R , template_TT4
 
-// 模板参数变量列表		_T0 , _T1 , _T2 , _T3
-#define TmplArgOTList4	TmplArgOTList3 , TmplArgOT4
+// ==> arg3
+#define template_a4			template_a(3)
 
-// 函数参数变量			arg3
-#define TmplArgOV4		TmplArgV(3)
+// ==> _T3 arg3
+#define template_Ta4		template_T4 template_a4
 
-// 函数参数变量列表		arg0 , arg1 , arg2 , arg3
-#define TmplArgOVList4	TmplArgOVList3 , TmplArgOV4
+// ==> arg0 , arg1 , arg2 , arg3
+#define template_aa4		template_aa3 , template_a4
 
-// 函数指针				_ResultType(_T0, _T1, _T2, _T3)
-#define TmplFuncPtr4	TmplResult(TmplArgOTList4)
+// ==> _T0 arg0 , _T1 arg1 , ... , _T3 arg3
+#define template_TaTa4		template_TaTa3 , template_Ta4
+
+// ==> _TResult(_T0, _T1, _T2, _T3)
+#define template_Func4		template_R(template_TT4)
+
+// ==> _TResult(*Ptr)(_T0, _T1, _T2, _T3)
+#define template_FuncPtr4	typedef template_R(*_ptr)(template_TT4);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 5
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2 , class _T3 , class _T4
-#define TmplArgList5	TmplArgList4 , TmplArgType(4)
+// ==> class _T0 , class _T1 , ... , class _T4
+#define template_cTcT5		template_cTcT4 , template_cT(4)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2 , class _T3 , class _T4
-#define TmplList5		TmplResultType , TmplArgList5
+// ==> class _TResult , class _T0 , ... , class _T4
+#define template_cRcTcT5	template_cR , template_cTcT5
 
-// 函数参数				_T4 arg4
-#define TmplArgT5		TmplArg(4) TmplArgV(4)
+// ==> _T4
+#define template_T5			template_T(4)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2 , _T3 arg3 , _T4 arg4
-#define TmplArgTList5	TmplArgTList4 , TmplArgT5
+// ==> _T0 , ... , _T4
+#define template_TT5		template_TT4 , template_T5
 
-// 模板参数变量			_T4
-#define TmplArgOT5		TmplArg(4)
+// ==> _TResult, _T0 , ... , _T4
+#define template_RTT5		template_R , template_TT5
 
-// 模板参数变量列表		_T0 , _T1 , _T2 , _T3 , _T4
-#define TmplArgOTList5	TmplArgOTList4 , TmplArgOT5
+// ==> arg4
+#define template_a5			template_a(4)
 
-// 函数参数变量			arg4
-#define TmplArgOV5		TmplArgV(4)
+// ==> _T4 arg4
+#define template_Ta5		template_T5 template_a5
 
-// 函数参数变量列表		arg0 , arg1 , arg2 , arg3 , arg4
-#define TmplArgOVList5	TmplArgOVList4 , TmplArgOV5
+// ==> arg0 , ... , arg4
+#define template_aa5		template_aa4 , template_a5
 
-// 函数指针				_ResultType(_T0, _T1, _T2, _T3, _T4)
-#define TmplFuncPtr5	TmplResult(TmplArgOTList5)
+// ==> _T0 arg0 , ... , _T4 arg4
+#define template_TaTa5		template_TaTa4 , template_Ta5
+
+// ==> _TResult(_T0, ..., _T4)
+#define template_Func5		template_R(template_TT5)
+
+// ==> _TResult(*Ptr)(_T0, ..., _T4)
+#define template_FuncPtr5	typedef template_R(*_ptr)(template_TT5);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 6
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5
-#define TmplArgList6	TmplArgList5 , TmplArgType(5)
+// ==> class _T0 , class _T1 , ... , class _T5
+#define template_cTcT6		template_cTcT5 , template_cT(5)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5
-#define TmplList6		TmplResultType , TmplArgList6
+// ==> class _TResult , class _T0 , ... , class _T5
+#define template_cRcTcT6	template_cR , template_cTcT6
 
-// 函数参数				_T5 arg5
-#define TmplArgT6		TmplArg(5) TmplArgV(5)
+// ==> _T5
+#define template_T6			template_T(5)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2 , _T3 arg3 , _T4 arg4 , _T5 arg5
-#define TmplArgTList6	TmplArgTList5 , TmplArgT6
+// ==> _T0 , ... , _T5
+#define template_TT6		template_TT5 , template_T6
 
-// 模板参数变量			_T5
-#define TmplArgOT6		TmplArg(5)
+// ==> _TResult, _T0 , ... , _T5
+#define template_RTT6		template_R , template_TT6
 
-// 模板参数变量列表		_T0 , _T1 , _T2 , _T3 , _T4 , _T5
-#define TmplArgOTList6	TmplArgOTList5 , TmplArgOT6
+// ==> arg5
+#define template_a6			template_a(5)
 
-// 函数参数变量			arg5
-#define TmplArgOV6		TmplArgV(5)
+// ==> _T5 arg5
+#define template_Ta6		template_T6 template_a6
 
-// 函数参数变量列表		arg0 , arg1 , arg2 , arg3 , arg4 , arg5
-#define TmplArgOVList6	TmplArgOVList5 , TmplArgOV6
+// ==> arg0 , ... , arg5
+#define template_aa6		template_aa5 , template_a6
 
-// 函数指针				_ResultType(_T0, _T1, _T2, _T3, _T4, _T5)
-#define TmplFuncPtr6	TmplResult(TmplArgOTList6)
+// ==> _T0 arg0 , ... , _T5 arg5
+#define template_TaTa6		template_TaTa5 , template_Ta6
+
+// ==> _TResult(_T0, ..., _T5)
+#define template_Func6		template_R(template_TT6)
+
+// ==> _TResult(*Ptr)(_T0, ..., _T5)
+#define template_FuncPtr6	typedef template_R(*_ptr)(template_TT6);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 7
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6
-#define TmplArgList7	TmplArgList6 , TmplArgType(6)
+// ==> class _T0 , class _T1 , ... , class _T6
+#define template_cTcT7		template_cTcT6 , template_cT(6)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6
-#define TmplList7		TmplResultType , TmplArgList7
+// ==> class _TResult , class _T0 , ... , class _T6
+#define template_cRcTcT7	template_cR , template_cTcT7
 
-// 函数参数				_T6 arg6
-#define TmplArgT7		TmplArg(6) TmplArgV(6)
+// ==> _T6
+#define template_T7			template_T(6)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2 , _T3 arg3 , _T4 arg4 , _T5 arg5 , _T6 arg6
-#define TmplArgTList7	TmplArgTList6 , TmplArgT7
+// ==> _T0 , ... , _T6
+#define template_TT7		template_TT6 , template_T7
 
-// 模板参数变量			_T6
-#define TmplArgOT7		TmplArg(6)
+// ==> _TResult, _T0 , ... , _T6
+#define template_RTT7		template_R , template_TT7
 
-// 模板参数变量列表		_T0 , _T1 , _T2 , _T3 , _T4 , _T5 , _T6
-#define TmplArgOTList7	TmplArgOTList6 , TmplArgOT7
+// ==> arg6
+#define template_a7			template_a(6)
 
-// 函数参数变量			arg6
-#define TmplArgOV7		TmplArgV(6)
+// ==> _T6 arg6
+#define template_Ta7		template_T7 template_a7
 
-// 函数参数变量列表		arg0 , arg1 , arg2 , arg3 , arg4 , arg5 , arg6
-#define TmplArgOVList7	TmplArgOVList6 , TmplArgOV7
+// ==> arg0 , ... , arg6
+#define template_aa7		template_aa6 , template_a7
 
-// 函数指针				_ResultType(_T0, _T1, _T2, _T3, _T4, _T5, _T6)
-#define TmplFuncPtr7	TmplResult(TmplArgOTList7)
+// ==> _T0 arg0 , ... , _T6 arg6
+#define template_TaTa7		template_TaTa6 , template_Ta7
+
+// ==> _TResult(_T0, ..., _T6)
+#define template_Func7		template_R(template_TT7)
+
+// ==> _TResult(*Ptr)(_T0, ..., _T6)
+#define template_FuncPtr7	typedef template_R(*_ptr)(template_TT7);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 8
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6 , class _T7
-#define TmplArgList8	TmplArgList7 , TmplArgType(7)
+// ==> class _T0 , class _T1 , ... , class _T7
+#define template_cTcT8		template_cTcT7 , template_cT(7)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6 , class _T7
-#define TmplList8		TmplResultType , TmplArgList8
+// ==> class _TResult , class _T0 , ... , class _T7
+#define template_cRcTcT8	template_cR , template_cTcT8
 
-// 函数参数				_T7 arg7
-#define TmplArgT8		TmplArg(7) TmplArgV(7)
+// ==> _T7
+#define template_T8			template_T(7)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2 , _T3 arg3 , _T4 arg4 , _T5 arg5 , _T6 arg6 , _T7 arg7
-#define TmplArgTList8	TmplArgTList7 , TmplArgT8
+// ==> _T0 , ... , _T7
+#define template_TT8		template_TT7 , template_T8
 
-// 模板参数变量			_T7
-#define TmplArgOT8		TmplArg(7)
+// ==> _TResult, _T0 , ... , _T7
+#define template_RTT8		template_R , template_TT8
 
-// 模板参数变量列表		_T0 , _T1 , _T2 , _T3 , _T4 , _T5 , _T6 , _T7
-#define TmplArgOTList8	TmplArgOTList7 , TmplArgOT8
+// ==> arg7
+#define template_a8			template_a(7)
 
-// 函数参数变量			arg7
-#define TmplArgOV8		TmplArgV(7)
+// ==> _T7 arg7
+#define template_Ta8		template_T8 template_a8
 
-// 函数参数变量列表		arg0 , arg1 , arg2 , arg3 , arg4 , arg5 , arg6 , arg7
-#define TmplArgOVList8	TmplArgOVList7 , TmplArgOV8
+// ==> arg0 , ... , arg7
+#define template_aa8		template_aa7 , template_a8
 
-// 函数指针				_ResultType(_T0, _T1, _T2, _T3, _T4, _T5, _T6, _T7)
-#define TmplFuncPtr8	TmplResult(TmplArgOTList8)
+// ==> _T0 arg0 , ... , _T7 arg7
+#define template_TaTa8		template_TaTa7 , template_Ta8
+
+// ==> _TResult(_T0, ..., _T7)
+#define template_Func8		template_R(template_TT8)
+
+// ==> _TResult(*Ptr)(_T0, ..., _T7)
+#define template_FuncPtr8	typedef template_R(*_ptr)(template_TT8);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 9
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6 , class _T7 , class _T8
-#define TmplArgList9	TmplArgList8 , TmplArgType(8)
+// ==> class _T0 , class _T1 , ... , class _T8
+#define template_cTcT9		template_cTcT8 , template_cT(8)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6 , class _T7 , class _T8
-#define TmplList9		TmplResultType , TmplArgList9
+// ==> class _TResult , class _T0 , ... , class _T8
+#define template_cRcTcT9	template_cR , template_cTcT9
 
-// 函数参数				_T8 arg8
-#define TmplArgT9		TmplArg(8) TmplArgV(8)
+// ==> _T8
+#define template_T9		template_T(8)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2 , _T3 arg3 , _T4 arg4 , _T5 arg5 , _T6 arg6 , _T7 arg7 , _T8 arg8
-#define TmplArgTList9	TmplArgTList8 , TmplArgT9
+// ==> _T0 , ... , _T8
+#define template_TT9		template_TT8 , template_T9
 
-// 模板参数变量			_T8
-#define TmplArgOT9		TmplArg(8)
+// ==> _TResult, _T0 , ... , _T8
+#define template_RTT9		template_R , template_TT9
 
-// 模板参数变量列表		_T0 , _T1 , _T2 , _T3 , _T4 , _T5 , _T6 , _T7 , _T8
-#define TmplArgOTList9	TmplArgOTList8 , TmplArgOT9
+// ==> arg8
+#define template_a9			template_a(8)
 
-// 函数参数变量			arg8
-#define TmplArgOV9		TmplArgV(8)
+// ==> _T8 arg8
+#define template_Ta9		template_T9 template_a9
 
-// 函数参数变量列表		arg0 , arg1 , arg2 , arg3 , arg4 , arg5 , arg6 , arg7 , arg8
-#define TmplArgOVList9	TmplArgOVList8 , TmplArgOV9
+// ==> arg0 , ... , arg8
+#define template_aa9		template_aa8 , template_a9
 
-// 函数指针				_ResultType(_T0, _T1, _T2, _T3, _T4, _T5, _T6, _T7, _T8)
-#define TmplFuncPtr9	TmplResult(TmplArgOTList9)
+// ==> _T0 arg0 , ... , _T8 arg8
+#define template_TaTa9		template_TaTa8 , template_Ta9
+
+// ==> _TResult(_T0, ..., _T8)
+#define template_Func9		template_R(template_TT9)
+
+// ==> _TResult(*Ptr)(_T0, ..., _T8)
+#define template_FuncPtr9	typedef template_R(*_ptr)(template_TT9);
 
 
 //////////////////////////////////////////////////////////////////////////
 // 10
 
-// 模板参数（右侧）列表 class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6 , class _T7 , class _T8 , class _T9
-#define TmplArgList10	TmplArgList9 , TmplArgType(9)
+// ==> class _T0 , class _T1 , ... , class _T9
+#define template_cTcT10		template_cTcT9 , template_cT(9)
 
-// 模板参数（完整）列表 class _ResultType , class _T0 , class _T1 , class _T2 , class _T3 , class _T4 , class _T5 , class _T6 , class _T7 , class _T8 , class _T9
-#define TmplList10		TmplResultType , TmplArgList10
+// ==> class _TResult , class _T0 , ... , class _T9
+#define template_cRcTcT10	template_cR , template_cTcT10
 
-// 函数参数				_T9 arg9
-#define TmplArgT10		TmplArg(9) TmplArgV(9)
+// ==> _T9
+#define template_T10		template_T(9)
 
-// 函数参数列表			_T0 arg0 , _T1 arg1 , _T2 arg2 , _T3 arg3 , _T4 arg4 , _T5 arg5 , _T6 arg6 , _T7 arg7 , _T8 arg8 , _T9 arg9
-#define TmplArgTList10	TmplArgTList9 , TmplArgT10
+// ==> _T0 , ... , _T9
+#define template_TT10		template_TT9 , template_T10
 
-// 模板参数变量			_T9
-#define TmplArgOT10		TmplArg(9)
+// ==> _TResult, _T0 , ... , _T9
+#define template_RTT10		template_R , template_TT10
 
-// 模板参数变量列表		_T0 , _T1 , _T2 , _T3 , _T4 , _T5 , _T6 , _T7 , _T8 , _T9
-#define TmplArgOTList10	TmplArgOTList9 , TmplArgOT10
+// ==> arg9
+#define template_a10		template_a(9)
 
-// 函数参数变量			arg9
-#define TmplArgOV10		TmplArgV(9)
+// ==> _T9 arg9
+#define template_Ta10		template_T10 template_a10
 
-// 函数参数变量列表		arg0 , arg1 , arg2 , arg3 , arg4 , arg5 , arg6 , arg7 , arg8 , arg9
-#define TmplArgOVList10	TmplArgOVList9 , TmplArgOV10
+// ==> arg0 , ... , arg9
+#define template_aa10		template_aa9 , template_a10
 
-// 函数指针				_ResultType(_T0, _T1, _T2, _T3, _T4, _T5, _T6, _T7, _T8, _T9)
-#define TmplFuncPtr10	TmplResult(TmplArgOTList10)
+// ==> _T0 arg0 , ... , _T9 arg9
+#define template_TaTa10		template_TaTa9 , template_Ta10
+
+// ==> _TResult(_T0, ..., _T9)
+#define template_Func10		template_R(template_TT10)
+
+// ==> _TResult(*Ptr)(_T0, ..., _T9)
+#define template_FuncPtr10	typedef template_R(*_ptr)(template_TT10);

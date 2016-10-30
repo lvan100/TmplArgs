@@ -29,28 +29,31 @@
 // 定义 typename 关键字. 在模板参数定义
 // 的时候使用class关键字有时候会报错.
 
-#define TmplClass		typename
+#define template_c		typename
 
-// 定义模板参数中返回值变量类型
-// template<typename _TResult>
+// ==> _TResult
 
-#define TmplResult		_TResult
+#define template_R		_TResult
 
 // ==> class _TResult
 
-#define TmplResultType	TmplClass TmplResult
+#define template_cR		template_c template_R
 
-// ==> class _T0..._T9
+// ==> _T0
 
-#define TmplArgType(x)	TmplClass _T##x
+#define template_T(x)	_T##x
 
-// ==> _T0..._T9
+// ==> class _T0
 
-#define TmplArg(x)		_T##x
+#define template_cT(x)	template_c template_T(x)
 
-// ==> arg0...arg9
+// ==> arg0
 
-#define TmplArgV(x)		arg##x
+#define template_a(x)	arg##x
+
+// ==> _T0 arg0
+
+#define template_Ta(x)	template_T(x) template_a(x)
 
 
 // 非常关键的类型声明(注意不是类型定义,没有后面的{}) :
